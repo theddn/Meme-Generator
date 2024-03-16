@@ -8,13 +8,35 @@
     <title>Meme Generator</title>
 </head>
 
-<body>
-    
-    <header></header>
+<body onload="onInit()">
+
+    <header class="main-header">
+        <div>
+            <div class="logo">logo</div>
+            <nav class="main-nav">
+                <ul class="main-nav-list">
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Meme</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="editor">
+        <div>
+            <canvas id="meme-canvas" width="450" height="450"></canvas>
+        </div>
+        <div class="select-img">
+            <button onclick="onSelectImg()">select</button>
+            <input type="text" name="name" id="name"/>
+        
+            <button onclick="onDrawText()">Text</button>
+            <button onclick="onClearCanvas()">Clear</button>
+        </div>
+    </section>
 
     <section class="gallery"></section>
-
-    <section class="editor"></section>
 
     <script src="js/main.js"></script>
 </body>
