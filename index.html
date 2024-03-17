@@ -24,21 +24,26 @@
     </header>
 
     <section class="editor">
-        <div>
-            <canvas id="meme-canvas" width="450" height="450"></canvas>
+        <div class="canvas-container">
+            <canvas id="canvas" width="300" height="300"></canvas>
         </div>
-        <div class="select-img">
-            <button onclick="onSelectImg()">select</button>
-            <input type="text" name="name" id="name"/>
         
-            <button onclick="onDrawText()">Text</button>
+        <div class="tools-box">
+            <button onclick="onSelectImg()">select</button>
+
+            <input type="text" name="adds-text" placeholder="Write here.." />
+
+            <button onclick="drawText()">Text</button>
             <button onclick="onClearCanvas()">Clear</button>
         </div>
     </section>
 
     <section class="gallery"></section>
 
-    <script src="js/main.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+
+    <script src="js/meme-controller.js"></script>
 </body>
 
 </html>
