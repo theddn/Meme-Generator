@@ -4,14 +4,15 @@ let gCanvas
 let gCtx
 
 function onInit() {
+    renderGallery() 
     gCanvas = document.querySelector('canvas')
     gCtx = gCanvas.getContext('2d')
-
-    renderMeme()
+    
+    document.querySelector('.gallery').style.display = 'grid'
+    document.querySelector('.editor').style.display = 'none'
 }
 
 //render the meme on the canvas and the text on the image
-
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
