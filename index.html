@@ -23,23 +23,20 @@
         </div>
     </header>
 
+    <section class="gallery">
+        <!-- <img src="meme-imgs/1.jpg" />
+        <img src="meme-imgs/2.jpg" /> -->
+    </section>
+
     <section class="editor">
         <div class="canvas-container">
             <canvas id="canvas" width="300" height="300"></canvas>
         </div>
-
         <div class="tools-box">
-            <label for="adds-text"></label>
-            <input type="text" name="adds-text" placeholder="Write here.."/>
-            <button onclick="onDrawText()">Text</button>
-            <button onclick="onClearCanvas()">Clear</button>
+            <input type="text" class="text-input" placeholder="Enter your text here" onkeyup="onTextInput(this.value)" />
+            <button onclick="onAddText()">Add Line</button>
         </div>
 
-    </section>
-
-    <section class="select-gallery">
-        <img src="meme-imgs/1.jpg" onclick="onSelectImg(this)" />
-        <img src="meme-imgs/2.jpg" onclick="onSelectImg(this)" />
     </section>
 
     <script src="js/services/util.service.js"></script>

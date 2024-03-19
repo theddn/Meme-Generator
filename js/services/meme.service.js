@@ -7,22 +7,26 @@ let gImgs = [
     }]
 
 let gMeme = {
-    selectedImgId: 0,
+    selectedImgId: 1,
+    selectedLineIdx: 0,
     lines: [{
-        txt: 'trump',
-        size: 20,
-        color: 'red',
+        txt: 'type here',
+        size: 40,
+        color: 'yellow',
+        x: 50,
+        y: 50,
     }]
 }
 
-
-
-// create factory image 
 
 function getMeme() {
     return gMeme
 }
 
+function getImgs() {
+    return gImgs
+}
 
-
-
+function setLineTxt(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}

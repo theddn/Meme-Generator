@@ -10,50 +10,27 @@ function onInit() {
     renderMeme()
 }
 
+//render the meme on the canvas and the text on the image
 
 function renderMeme() {
-    drawImg()
-    onDrawText()
-}
+    const meme = getMeme()
+    const img = new Image()
 
-
-function drawImg() {
-    let img = new Image()
-    img.src = 'meme-imgs/1.jpg'
-
-    img.onload = () =>
+    img.src = `meme-imgs/${meme.selectedImgId}.jpg`
+    img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+
+        meme.lines.forEach(line => {
+            gCtx.font = `${line.size}px Arial`
+            gCtx.fillStyle = line.color
+            gCtx.fillText(line.txt, line.x, line.y)
+        })
+    }
 }
 
-
-function drawText(txt ,x, y) {
-
-    gCtx.fillStyle = 'green'
-    gCtx.strokeStyle = 'black'
-    gCtx.font = '50px Arial'
-
-    gCtx.textAlign = 'center'
-    gCtx.textBaseLine = 'middle'
-
-
-    gCtx.fillText(txt,x, y)
-    gCtx.strokeText(txt,x, y)
+function onTextInput() {
+    let txt = document.querySelector('input[class=text-input]').value
+    setLineTxt(txt)
+    renderMeme()
 }
 
-function onDrawText(){
-    drawText('trump' , gCanvas.width/2, gCanvas.height/2)
-}
-
-
-function onClearCanvas() {
-    gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
-
-}
-
-//gallery 
-
-function onSelectImg(elImg) {
-
-    gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
-
-}
