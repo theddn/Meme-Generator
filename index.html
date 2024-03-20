@@ -24,17 +24,29 @@
     </header>
 
     <section class="gallery">
-        <!-- <img src="meme-imgs/1.jpg" />
-        <img src="meme-imgs/2.jpg" /> -->
     </section>
 
     <section class="editor">
+
         <div class="canvas-container">
             <canvas id="canvas" width="300" height="300"></canvas>
         </div>
-        <div class="tools-box">
-            <input type="text" class="text-input" placeholder="Enter your text here" onkeyup="onTextInput(this.value)" />
-            <button onclick="onAddText()">Add Line</button>
+
+        <div class="tool-box">
+
+            <input type="text" class="text-input" placeholder="Enter your text here"
+                onkeyup="onAddText(this.value)" />
+                
+            <button onclick="onAddLine()">Add Line</button>
+
+            <div class="color-picker">
+                    <input type="color" class="color-input" value="#0000ff"  onchange="onColorPicker(this.value)"/>
+            </div>
+
+        </div>
+
+        <div>
+            <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
         </div>
 
     </section>

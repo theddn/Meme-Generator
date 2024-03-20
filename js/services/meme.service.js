@@ -22,12 +22,12 @@ let gImgs = [
 ]
  
 let gMeme = {
-    selectedImgId: 1,
+    selectedImgId: 0,
     selectedLineIdx: 0,
     lines: [{
         txt: '',
-        size: 40,
-        color: 'yellow',
+        size: 30,
+        color: '#0000ff',
         x: 50,
         y: 50,
     }]
@@ -41,8 +41,12 @@ function getImgs() {
     return gImgs
 }
 
-function setLineTxt(txt) {
+function setLineText(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
+
+function setLineColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 
 function setMemeImgId(imgId) {
