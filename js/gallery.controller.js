@@ -10,9 +10,9 @@ function renderGallery() {
 
 
 function onImgSelect(imgId) {
-    setMemeImgId(imgId)
-    renderMeme()
     document.querySelector('.gallery').style.display = 'none'
     document.querySelector('.editor').style.display = 'flex'
 
+    setMemeImgId(imgId)
+    renderMeme()
 }

@@ -20,7 +20,7 @@ let gImgs = [
     { id: 17, url: 'meme-imgs/17.jpg' },
     { id: 18, url: 'meme-imgs/18.jpg' }
 ]
- 
+
 let gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
@@ -47,6 +47,13 @@ function setLineText(txt) {
 
 function setLineColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
+}
+function increaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size += 5
+}
+
+function decreaseFont() {
+    gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
 
 function setMemeImgId(imgId) {
