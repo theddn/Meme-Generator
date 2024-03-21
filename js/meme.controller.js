@@ -34,6 +34,17 @@ function onAddText() {
     renderMeme()
 }
 
+function onAddLine(){
+    let txt = document.querySelector('input[name=text-input]').value= ''
+    addLine()
+    renderMeme()
+}
+
+function onSwitchLine() {
+    switchLine()
+    renderMeme()
+}
+
 function onColorPicker() {
     let color = document.querySelector('input[name=color-input]').value
     setLineColor(color)
@@ -49,12 +60,6 @@ function onIncreaseFont() {
 function onDecreaseFont() {
     let meme = getMeme()
     decreaseFont(meme)
-    renderMeme()
-}
-
-
-function onAddLine() {
-
     renderMeme()
 }
 

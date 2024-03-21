@@ -5,22 +5,4 @@
 canvas {
   border: 1px solid black;
 }
-  
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  gap: 1rem;
-}
-
-image {
-  width: 100%;
-  height: auto;
-  display: flex;
-  margin: 0 auto;
-}

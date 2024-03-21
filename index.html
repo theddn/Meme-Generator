@@ -16,7 +16,6 @@
             <nav class="main-nav">
                 <ul class="main-nav-list">
                     <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Meme</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
@@ -29,7 +28,7 @@
     <section class="editor">
 
         <div class="canvas-container">
-            <canvas id="canvas" width="300" height="300"></canvas>
+            <canvas id="canvas" width="500" height="500"></canvas>
         </div>
 
         <div class="tool-box">
@@ -37,10 +36,11 @@
             <input type="text" name="text-input" placeholder="Enter your text here" onkeyup="onAddText(this.value)" />
 
             <button onclick="onAddLine()">Add Line</button>
-
+            <button onclick="onSwitchLine()">switch</button>
             <div class="color-picker">
                 <input type="color" name="color-input" value="#0000ff" onchange="onColorPicker(this.value)" />
             </div>
+
             <div class="text-size">
                 <button onclick="onIncreaseFont()">+</button>
                 <button onclick="onDecreaseFont()">-</button>

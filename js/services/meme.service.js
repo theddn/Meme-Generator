@@ -45,9 +45,22 @@ function setLineText(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }
 
+function addLine() {
+    gMeme.lines.push({
+        txt: '',
+        size: 30,
+        color: '#0000ff',
+        x: 50,
+        y:150,
+    })  
+    gMeme.selectedLineIdx++
+
+}
+
 function setLineColor(color) {
     gMeme.lines[gMeme.selectedLineIdx].color = color
 }
+
 function increaseFont() {
     gMeme.lines[gMeme.selectedLineIdx].size += 5
 }
@@ -55,6 +68,12 @@ function increaseFont() {
 function decreaseFont() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
+
+function switchLine() {
+    gMeme.selectedLineIdx++
+    if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
+}
+
 
 function setMemeImgId(imgId) {
     gMeme.selectedImgId = imgId
