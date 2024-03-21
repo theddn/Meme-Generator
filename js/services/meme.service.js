@@ -50,7 +50,7 @@ function addLine() {
         txt: '',
         size: 30,
         color: '#0000ff',
-        x: 50,
+        x: 100,
         y:150,
     })  
     gMeme.selectedLineIdx++
@@ -73,7 +73,6 @@ function switchLine() {
     gMeme.selectedLineIdx++
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
 }
-
 
 function setMemeImgId(imgId) {
     gMeme.selectedImgId = imgId

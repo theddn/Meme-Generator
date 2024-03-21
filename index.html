@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/0ab0c95f84.js" crossorigin="anonymous"></script>
     <title>Meme Generator</title>
 </head>
 
@@ -12,11 +13,9 @@
 
     <header class="main-header">
         <div>
-            <div class="logo">logo</div>
             <nav class="main-nav">
                 <ul class="main-nav-list">
                     <li><a href="#">Gallery</a></li>
-                    <li><a href="#">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,27 +27,22 @@
     <section class="editor">
 
         <div class="canvas-container">
-            <canvas id="canvas" width="500" height="500"></canvas>
+            <canvas id="canvas" width="400" height="400"></canvas>
         </div>
 
         <div class="tool-box">
-
             <input type="text" name="text-input" placeholder="Enter your text here" onkeyup="onAddText(this.value)" />
-
-            <button onclick="onAddLine()">Add Line</button>
-            <button onclick="onSwitchLine()">switch</button>
-            <div class="color-picker">
+            <div>
+                <button onclick="onAddLine()">add</i></button>
+                <button onclick="onSwitchLine()">switch</button>
+                <button onclick="onDelete()"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+            <div class="text-change">
                 <input type="color" name="color-input" value="#0000ff" onchange="onColorPicker(this.value)" />
+                <button  onclick="onIncreaseFont()"><i class="fa-solid fa-square-plus"></i></button>
+                <button onclick="onDecreaseFont()"><i class="fa-solid fa-square-minus"></i></button>
             </div>
-
-            <div class="text-size">
-                <button onclick="onIncreaseFont()">+</button>
-                <button onclick="onDecreaseFont()">-</button>
-            </div>
-        </div>
-
-        <div>
-            <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+            <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">download</a>
         </div>
 
     </section>

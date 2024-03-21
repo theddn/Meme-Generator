@@ -6,7 +6,7 @@ let gCtx
 function onInit() {
     gCanvas = document.querySelector('canvas')
     gCtx = gCanvas.getContext('2d')
-    document.querySelector('.gallery').style.display = 'grid'
+    document.querySelector('.gallery').style.display = 'flex'
     document.querySelector('.editor').style.display = 'none'
 
     renderGallery()
