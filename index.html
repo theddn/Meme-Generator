@@ -15,7 +15,7 @@
         <div>
             <nav class="main-nav">
                 <ul class="main-nav-list">
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#" onclick="onGallerySelect(event)">Gallery</a></li>
                 </ul>
             </nav>
         </div>
@@ -39,7 +39,7 @@
             </div>
             <div class="text-change">
                 <input type="color" name="color-input" value="#0000ff" onchange="onColorPicker(this.value)" />
-                <button  onclick="onIncreaseFont()"><i class="fa-solid fa-square-plus"></i></button>
+                <button onclick="onIncreaseFont()"><i class="fa-solid fa-square-plus"></i></button>
                 <button onclick="onDecreaseFont()"><i class="fa-solid fa-square-minus"></i></button>
             </div>
             <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">download</a>

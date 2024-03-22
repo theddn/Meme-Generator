@@ -16,3 +16,13 @@ function onImgSelect(imgId) {
     setMemeImgId(imgId)
     renderMeme()
 }
+
+
+function onGallerySelect(ev) {
+    document.querySelector('.gallery').style.display = 'flex'
+    document.querySelector('.editor').style.display = 'none'
+    renderMeme()
+    renderGallery()
+
+
+}

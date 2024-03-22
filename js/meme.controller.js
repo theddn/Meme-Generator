@@ -40,8 +40,8 @@ function onAddLine(){
     renderMeme()
 }
 
-function onSwitchLine() {
-    switchLine()
+function onToggleLine() {
+    toggleLine()
     renderMeme()
 }
 
@@ -66,4 +66,8 @@ function onDecreaseFont() {
 function downloadImg(elLink) {
     const imgContent = gCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
+}
+
+function onDelete() { 
+
 }
