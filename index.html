@@ -27,22 +27,24 @@
     <section class="editor">
 
         <div class="canvas-container">
-            <canvas id="canvas" width="400" height="400"></canvas>
+            <canvas id="canvas" width="500" height="500"></canvas>
         </div>
 
         <div class="tool-box">
-            <input type="text" name="text-input" placeholder="Enter your text here" onkeyup="onAddText(this.value)" />
+            <input type="text" name="text-input" placeholder="Enter text here" onkeyup="onAddText(this.value)" />
             <div>
-                <button onclick="onAddLine()">add</i></button>
-                <button onclick="onSwitchLine()">switch</button>
+                <button onclick="onAddLine()">add</button>
+                <button onclick="onToggleLine()">switch</button>
                 <button onclick="onDelete()"><i class="fa-regular fa-trash-can"></i></button>
             </div>
             <div class="text-change">
                 <input type="color" name="color-input" value="#0000ff" onchange="onColorPicker(this.value)" />
-                <button onclick="onIncreaseFont()"><i class="fa-solid fa-square-plus"></i></button>
-                <button onclick="onDecreaseFont()"><i class="fa-solid fa-square-minus"></i></button>
+                <i onclick="onIncreaseFont()" class="fa-solid fa-square-plus fa-2xl"></i>
+                <i onclick="onDecreaseFont()" class="fa-solid fa-square-minus fa-2xl"></i>
             </div>
-            <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">download</a>
+            <div>
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+            </div>
         </div>
 
     </section>

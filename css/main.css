@@ -9,10 +9,8 @@ body {
   margin: 0;
 }
 
-
 .main-header {
   background-color: #282c34;
-  box-shadow: inset 0px -6px 0 #121212;
 }
 
 .main-header .main-nav-list {
@@ -24,11 +22,12 @@ body {
 .main-header .main-nav-list a {
   text-decoration: none;
   color: white;
-  transition: box-shadow 0.4s ;
+  padding: 1em;
+  transition: box-shadow 0.4s;
 }
 
 .main-header .main-nav-list a:hover {
-  box-shadow: inset 0px -6px 0 #27a4b6; 
+  box-shadow: inset 0px -6px 0 #27a4b6;
 }
 
 .gallery {
@@ -38,13 +37,12 @@ body {
   padding: 1em;
   gap: 1em;
 }
-.gallery-item{
-  display:flex;
+.gallery-item {
+  display: flex;
   position: relative;
   margin-bottom: 1em;
   border-radius: 0.5em;
   cursor: pointer;
-
 }
 
 image {
@@ -62,9 +60,8 @@ canvas {
   display: flex;
   justify-content: center;
   padding: 1em;
-  background-color: rgba(39, 156, 182, 0.431);
   border-radius: 0.5em;
-
+  
 }
 
 .tool-box {
@@ -73,13 +70,45 @@ canvas {
   margin-left: 1em;
   padding: 1em;
   border-radius: 0.5em;
+  
+}
+.tool-box button {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
 }
 
-.text-change {
-  background-color: rgba(39, 156, 182, 0.431);
-  height: auto;
-  padding: 1em;
+.tool-box button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
-.text-change input {
+.text-change {
+  color: white;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  background-color: rgba(255, 255, 255, 0.1);
+
+}
+.text-change :hover {
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
+}
+
+.text-change input {
+  background-color: none;
+  margin: 0.5em;
+  border-radius: 0.5em;
+}
+
+.btn {
+  background-color: #27b63a;
+  color: white;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
 }

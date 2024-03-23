@@ -6,24 +6,30 @@ let gCtx
 function onInit() {
     gCanvas = document.querySelector('canvas')
     gCtx = gCanvas.getContext('2d')
-    document.querySelector('.gallery').style.display = 'flex'
-    document.querySelector('.editor').style.display = 'none'
-
+   
     renderGallery()
-
 }
 
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
-
     img.src = `meme-imgs/${meme.selectedImgId}.jpg`
     img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+        gCtx.drawImage(img, 0, 0, gCanvas.height, gCanvas.width)
         meme.lines.forEach(line => {
+
+            gCtx.lineWidth = '2'
             gCtx.font = `${line.size}px Arial`
             gCtx.fillStyle = line.color
-            gCtx.fillText(line.txt, line.x, line.y)
+            gCtx.strokeStyle = "black"
+
+            gCtx.baselines = 'center'
+            gCtx.textAlign = 'middle'
+
+            gCtx.strokeText(line.txt, line.pos.x, line.pos.y)
+            gCtx.fillText(line.txt, line.pos.x, line.pos.y)
+
+            gCtx.strokeRect(line.pos.x - 10, line.pos.y - line.size, gCtx.measureText(line.txt).width + 20, line.size + 10)
         })
     }
 }
@@ -34,14 +40,15 @@ function onAddText() {
     renderMeme()
 }
 
-function onAddLine(){
+function onAddLine() {
     let txt = document.querySelector('input[name=text-input]').value= ''
-    addLine()
+    addLine(txt)
     renderMeme()
 }
 
 function onToggleLine() {
-    toggleLine()
+    let txt = document.querySelector('input[name=text-input]').value 
+    toggleLine(txt)
     renderMeme()
 }
 
@@ -64,10 +71,12 @@ function onDecreaseFont() {
 }
 
 function downloadImg(elLink) {
+
     const imgContent = gCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
 }
 
 function onDelete() { 
+   gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
 
 }

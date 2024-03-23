@@ -25,12 +25,23 @@ let gMeme = {
     selectedImgId: 0,
     selectedLineIdx: 0,
     lines: [{
-        txt: '',
-        size: 30,
-        color: '#0000ff',
-        x: 50,
-        y: 50,
+        txt: 'Write text here',
+        size: 40,
+        color: '#FF0000',
+        pos: { x: 100, y: 50 },
     }]
+}
+
+function addLine() {
+    gMeme.lines.push({
+        txt: 'Write text here',
+        size: 40,
+        color: '#FFFFFF',
+        pos: { x: 100, y: gCanvas.height - 50 },
+    })
+    gMeme.selectedLineIdx++
+
+
 }
 
 function getMeme() {
@@ -43,17 +54,7 @@ function getImgs() {
 
 function setLineText(txt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
-}
 
-function addLine() {
-    gMeme.lines.push({
-        txt: '',
-        size: 30,
-        color: '#0000ff',
-        x: 100,
-        y:150,
-    })  
-    gMeme.selectedLineIdx++
 
 }
 
@@ -69,12 +70,17 @@ function decreaseFont() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 5
 }
 
-function switchLine() {
-    gMeme.selectedLineIdx++
-    if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
+function toggleLine() {
+    gMeme.lines.length - 1 === gMeme.selectedLineIdx
+        ? (gMeme.selectedLineIdx = 0)
+        : gMeme.selectedLineIdx++
 }
 
 function setMemeImgId(imgId) {
     gMeme.selectedImgId = imgId
 }
 
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx = 0
+}
